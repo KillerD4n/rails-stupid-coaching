@@ -1,0 +1,21 @@
+<h1>Coach Answer</h1>
+<div class="question">
+  <h2>Your Question</h2>
+  <p><%=@question%></p>
+</div>
+<%if @question == "I AM GOING TO WORK RIGHT NOW!"
+    @answer = "GOOD GO!"
+  elsif @question[-1] == "?" && @question == @question.upcase
+    @answer = "I can feel your motivation! Silly question, get dressed and go to work!"
+  elsif @question == @question.upcase
+    @answer = "I can feel your motivation! I don't care, get dressed and go to work!"
+  else
+   @answer = "I don't care, get dressed and go to work!"
+  end
+%>
+<div class="answer">
+  <h2>Coach Answer </h2>
+  <p><%=@answer%></p>
+</div>
+<%=link_to 'Ask another question', ask_path %>
+
